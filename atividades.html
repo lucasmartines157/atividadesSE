@@ -1,0 +1,100 @@
+
+<!DOCTYPE html>
+<html lang="pt-br">
+ 
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Notas do Aluno</title>
+</head>
+ 
+<body>
+    <h1>Leia Nota do Aluno</h1>
+    <p>Aluno: <span id="aluno"></span></p>
+    <p>Nota 1: <span id="nota1"></span></p>
+    <p>Nota 2: <span id="nota2"></span></p>
+    <p>Nota 3: <span id="nota3"></span></p>
+    <p>Nota Maior: <span id="notamaior"></span></p>
+    <p>Nota do Meio: <span id="notameio"></span></p>
+    <p>Nota Menor: <span id="notamenor"></span></p>
+ 
+    <p>Resultado Final: <span id="mensagem"></span></p>
+   
+    <script>
+        let aluno = prompt("Digite o nome do aluno: ")
+        let nota1 = Number(prompt("Digite sua primeira nota"))
+        let nota2 = Number(prompt("Digite sua segunda nota"))
+        let nota3 = Number(prompt("Digite sua terceira nota"))
+        let mensagem
+ 
+        let media = (nota1 + nota2 + nota3) / 3
+ 
+        let notamaior
+        let notameio
+        let notamenor
+ 
+        if (media >= 6) {
+            mensagem = ("O aluno " + aluno + " foi aprovado com a média " + media)
+        }
+        else if (media < 6) {
+            mensagem = ("O aluno " + aluno + " foi reprovado com a média " + media)
+        }
+ 
+ 
+ 
+        if (nota1 < nota2 && nota1 < nota3) {
+            notamenor = nota1;
+            if (nota2 < nota3) {
+                notameio = nota2;
+                notamaior = nota3;
+            } else {
+                notameio = nota3;
+                notamaior = nota2;
+            }
+ 
+        } else if (nota2 < nota1 && nota2 < nota3) {
+            notamenor = nota2;
+            if (nota1 < nota3) {
+                notameio = nota1;
+                notamaior = nota3;
+            } else {
+                notameio = nota3;
+                notamaior = nota1;
+            }
+ 
+        } else {
+            notamenor = nota3;
+            if (nota1 < nota2) {
+                notameio = nota1;
+                notamaior = nota2;
+            } else {
+                notameio = nota2;
+                notamaior = nota1;
+            }
+        }
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+        document.getElementById('aluno').innerHTML = aluno;
+        document.getElementById('nota1').innerHTML = nota1;
+        document.getElementById('nota2').innerHTML = nota2;
+        document.getElementById('nota3').innerHTML = nota3;
+ 
+        document.getElementById('mensagem').innerHTML = mensagem;
+ 
+       
+        document.getElementById('notamaior').innerHTML = notamaior;
+        document.getElementById('notamenor').innerHTML = notamenor;
+        document.getElementById('notameio').innerHTML = notameio;
+       
+        document.getElementById('media').innerHTML = media;
+ 
+    </script>
+ 
+</body>
+ 
+</html>

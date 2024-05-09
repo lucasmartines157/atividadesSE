@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+ 
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Peso</title>
+</head>
+ 
+<body>
+    <h1>Leia Peso</h1>
+    <p>Nome da primeira pessoa: <span id="pessoa1"></span></p>
+    <p>Peso da primeira pessoa é de: <span id="peso1"></span></p><br>
+    <p>Nome da segunda pessoa: <span id="pessoa2"></span></p>
+    <p>Peso da segunda pessoa é de: <span id="peso2"></span></p><br>
+    <p>Nome da terceira pessoa: <span id="pessoa3"></span></p>
+    <p>Peso da terceira pessoa é de: <span id="peso3"></span></p><br>
+   
+    <p>Maior peso é de: <span id="pesomaior"></span></p>
+    <p>Peso do meio é de: <span id="pesomeio"></span></p>
+    <p>Menor peso é de: <span id="pesomenor"></span></p>
+   
+    <script>
+        let pessoa1 = prompt("Digite o nome da primeira pessoa: ")
+        let peso1 = Number(prompt("Digite peso da primeira pessoa: "))
+        let pessoa2 = prompt("Digite o nome da segunda pessoa: ")
+        let peso2 = Number(prompt("Digite peso da segunda pessoa: "))
+        let pessoa3 = prompt("Digite o nome da terceira pessoa: ")
+        let peso3 = Number(prompt("Digite peso da terceira pessoa: "))
+ 
+ 
+        let pesomaior
+        let pesomeio
+        let pesomenor
+ 
+ 
+ 
+        if (peso1 < peso2 && peso1 < peso3) {
+            pesomenor = peso1;
+            if (peso2 < peso3) {
+                pesomeio = peso2;
+                pesomaior = peso3;
+            } else {
+                pesomeio = peso3;
+                pesomaior = peso2;
+            }
+ 
+        } else if (peso2 < peso1 && peso2 < peso3) {
+            pesomenor = peso2;
+            if (peso1 < peso3) {
+                pesomeio = peso1;
+                pesomaior = peso3;
+            } else {
+                pesomeio = peso3;
+                pesomaior = peso1;
+            }
+ 
+        } else {
+            pesomenor = peso3;
+            if (peso1 < peso2) {
+                pesomeio = peso1;
+                pesomaior = peso2;
+            } else {
+                pesomeio = peso2;
+                pesomaior = peso1;
+            }
+        }
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+        document.getElementById('pessoa1').innerHTML = pessoa1;
+        document.getElementById('pessoa2').innerHTML = pessoa2;
+        document.getElementById('pessoa3').innerHTML = pessoa3;
+ 
+        document.getElementById('peso1').innerHTML = peso1;
+        document.getElementById('peso2').innerHTML = peso2;
+        document.getElementById('peso3').innerHTML = peso3;
+ 
+       
+        document.getElementById('pesomaior').innerHTML = pesomaior;
+        document.getElementById('pesomenor').innerHTML = pesomenor;
+        document.getElementById('pesomeio').innerHTML = pesomeio;
+ 
+    </script>
+ 
+</body>
+ 
+</html>,
